@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestellApp</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link rel="icon" href="./Favicon/favicon-16x16.png" type="image/icon type">
+    <script src="./script.js"></script>
+    <script src="template.js"></script>
+    <script src="./db.js"></script>
+</head>
+
+<body onload="init()">
+
+    <header>
+
+        <img class="header_logo" src="./Logo/Logo.png">
+        <div class="quantity_basket">
+            <span class="count_basket" id="quantity_basket"></span>
+            <img onclick="toggleBasket()" class="basket_logo" src="./Favicon/basket.png">
+
+        </div>
+
+    </header>
+    <main>
+
+        <div class="main_container">
+            <img class="background_img" src="./img/hintergrund.jpg">
+
+        </div>
+        <div class="cover_logocontainer">
+            <img class="cover_logo" src="./Logo/restaurant_logo.png">
+
+        </div>
+        <div class="rating_container">
+            <h2>Restaurant Poseidon</h2>
+            <span class="rating">Bewertung (4,2 von 5 Sternen) </span>
+
+        </div>
+        <hr>
+        <div class="country_filter">
+            <button onclick="filterDishes('all')">🍽️ Alle</button>
+            <button onclick="filterDishes('italian')">&#127470;&#127481; Italienisch</button>
+            <button onclick="filterDishes('japanese')">&#127471;&#127477; Japanisch</button>
+            <button onclick="filterDishes('mexican')">&#127474;&#127485; Mexikanisch</button>
+            <button onclick="filterDishes('american')">&#127482;&#127480; Amerikanisch</button>
+            <button onclick="filterDishes('turkish')">&#127481;&#127479; Türkisch</button>
+        </div>
+
+        <div class="content_wrapper">
+            <section class="dish_container" id="dish_container"></section>
+            <section class="basket_wrapper d_none " id="basket_wrapper">
+                <div class="basket_sticky_container">
+                    <div class="basket_title">
+                        <h2>Warenkorb</h2>
+
+                    </div>
+
+                    <div class="basket" id="basket"></div>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Zwischensumme:</td>
+                                <td id="sub_dishes"></td>
+                            </tr>
+                            <tr>
+                                <td>Lieferkosten:</td>
+                                <td>5,00 €</td>
+                            </tr>
+
+                            <tr>
+                                <td>Gesamt:</td>
+                                <td id="sub_total"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <button onclick="orderBtn()" class="order_btn">Bestellen</button>
+
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+    <footer>
+        <img class="footer_logo" src="./Logo/Logo.png">
+    </footer>
+    <div class="body_overlay d_none" id="body_overlay">
+        <div class="dialog" id="dialog">
+
+            <h3>Danke für deine Bestellung! Dein Essen ist schon unterwegs!</h3>
+        </div>
+    </div>
+
+</body>
+
+
+
+
+</html>

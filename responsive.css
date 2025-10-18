@@ -1,0 +1,185 @@
+@media (max-width: 768px) {
+  .content_wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  table {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .basket_wrapper {
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 12px;
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .dish_container {
+    padding-top: 40px;
+  }
+
+  .basket_sticky_container {
+    position: static;
+    width: 100%;
+  }
+
+  .header_logo {
+    height: 70px;
+    padding: 10px;
+  }
+
+  .basket_logo {
+    height: 32px;
+    width: 32px;
+  }
+
+  .count_basket {
+    top: 4px;
+    right: 18px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .cover_logo {
+    height: 100px;
+    width: 100px;
+  }
+  .dish_img img {
+    width: 80px;
+    height: 80px;
+  }
+  .order_btn {
+    width: 75%;
+  }
+  .rating_container {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  header,
+  footer {
+    height: 70px;
+  }
+
+  .header_logo {
+    height: 60px;
+    padding: 8px;
+  }
+
+  .basket_logo {
+    height: 28px;
+    width: 28px;
+  }
+
+  .count_basket {
+    top: 2px;
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .dish_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-top: 60px;
+    grid-template-columns: 1fr;
+  }
+
+  .dish_box {
+    width: 95%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .dish_img {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dish_img img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .dish_description {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .add_btn {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+
+  .content_wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .basket_wrapper {
+    width: 95%;
+    margin-top: 20px;
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .basket_sticky_container {
+    position: static;
+    padding-bottom: 8px;
+  }
+
+  .basket_item {
+    max-height: none;
+  }
+
+  .order_btn {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .empty_cart_text {
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  .background_img {
+    height: 200px;
+  }
+
+  .cover_logo {
+    height: 100px;
+    width: 100px;
+    top: -50px;
+  }
+  table {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    color: white;
+  }
+  .country_filter {
+    flex-direction: column;
+    align-items: center;
+    margin: 41px auto;
+  }
+
+  .country_filter button {
+    width: 90%;
+    font-size: 16px;
+  }
+}
