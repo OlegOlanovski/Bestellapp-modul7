@@ -3,20 +3,18 @@ function init() {
   renderBasketDishes();
 }
 
-function renderDishes(filteredCountry = "all") {
-  let contentRef = document.getElementById("dish_container");
-  contentRef.innerHTML = "";
-  // länder sortieren
-  let visibleDishes =
-    filteredCountry === "all"
-      ? dishes
-      : dishes.filter((dish) => dish.country === filteredCountry);
-  if (visibleDishes.length === 0) {
-    contentRef.innerHTML = "<p>Keine Gerichte gefunden.</p>";
-    return;
+function renderDishes(country = "all") {
+  const container = document.getElementById("dish_container");
+  container.innerHTML = "";
+  let visibleDishes = [];
+  for (let i = 0; i < dishes.length; i++) {
+    const dish = dishes[i];
+    if (country === "all" || dish.country === country) {
+      visibleDishes.push(dish);
+    }
   }
-  for (let indexDish = 0; indexDish < visibleDishes.length; indexDish++) {
-    contentRef.innerHTML += getDishTemplateFromObject(visibleDishes[indexDish]);
+  for (let i = 0; i < visibleDishes.length; i++) {
+    container.innerHTML += getDishTemplateFromObject(visibleDishes[i]);
   }
 }
 
