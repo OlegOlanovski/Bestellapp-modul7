@@ -21,7 +21,6 @@ function renderDishes(country = "all") {
 function addDishByName(name) {
   let product = dishes.find((d) => d.name === name);
   if (!product) return;
-
   let itemInCart = cart.find((item) => item.name === product.name);
   if (itemInCart) {
     itemInCart.amount++;
@@ -36,23 +35,29 @@ function filterDishes(country) {
 }
 
 function renderBasketDishes() {
-  let dishesBasketRef = document.getElementById("basket");
-  let subDishes = document.getElementById("sub_dishes");
-  let subTotal = document.getElementById("sub_total");
-  dishesBasketRef.innerHTML = "";
-  subDishes.innerHTML = "";
-  subTotal.innerHTML = "";
-  let subtotal = 0;
-  if (cart.length == 0) {
-    dishesBasketRef.innerHTML = "<i>Warenkorb ist leer...</i>";
+  let basket = document.getElementById("basket");
+  let sub = document.getElementById("sub_dishes");
+  let total = document.getElementById("sub_total");
+  basket.innerHTML = "";
+  sub.innerHTML = "";
+  total.innerHTML = "";
+  if (cart.length === 0) {
+    basket.innerHTML = "<i>Warenkorb ist leer...</i>";
     return;
   }
+  let subtotal = 0;
   for (let i = 0; i < cart.length; i++) {
-    dishesBasketRef.innerHTML += getBasketDishTemplate(i);
+    basket.innerHTML += getBasketDishTemplate(i);
     subtotal += cart[i].price * cart[i].amount;
   }
-  subDishes.innerText = formatPrice(subtotal);
-  subTotal.innerText = formatPrice(subtotal + deliveryCost);
+  updateBasketSummary(subtotal);
+}
+
+function updateBasketSummary(subtotal) {
+  document.getElementById("sub_dishes").innerText = formatPrice(subtotal);
+  document.getElementById("sub_total").innerText = formatPrice(
+    subtotal + deliveryCost
+  );
   updateBasketCount();
 }
 
@@ -100,11 +105,9 @@ function toggleBasket() {
 function updateBasketCount() {
   let basketCount = document.getElementById("quantity_basket");
   let totalItems = 0;
-
   for (let i = 0; i < cart.length; i++) {
     totalItems += cart[i].amount;
   }
-
   basketCount.innerText = totalItems;
   if (totalItems === 0) {
     basketCount.style.display = "none";
@@ -137,11 +140,9 @@ function orderBtn() {
     subDishes.innerHTML = "";
     subTotal.innerHTML = "";
     quantityBasket.innerHTML = "";
-
     if (typeof cart !== "undefined") {
       cart = [];
     }
-
     if (typeof updateBasketCount === "function") {
       updateBasketCount();
     }
