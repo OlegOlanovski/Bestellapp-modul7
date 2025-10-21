@@ -123,28 +123,36 @@ function deleteDish(index) {
 }
 
 function orderBtn() {
-  let thankYou = document.getElementById("body_overlay");
-  let container = document.getElementById("basket");
-  let subDishes = document.getElementById("sub_dishes");
-  let subTotal = document.getElementById("sub_total");
-  let quantityBasket = document.getElementById("quantity_basket");
-  if (!cart || cart.length === 0) {
-    container.innerHTML = `<p class="empty_cart_text"> Dein Warenkorb ist leer!</p>`;
-    return;
-  }
+  if (cartEmpty()) return showEmptyMessage();
+  showThankYou();
+  clearCartAfterDelay();
+}
 
-  thankYou.classList.remove("d_none");
-  setTimeout(() => {
-    thankYou.classList.add("d_none");
-    container.innerHTML = "";
-    subDishes.innerHTML = "";
-    subTotal.innerHTML = "";
-    quantityBasket.innerHTML = "";
-    if (typeof cart !== "undefined") {
-      cart = [];
-    }
-    if (typeof updateBasketCount === "function") {
-      updateBasketCount();
-    }
+function cartEmpty() {
+  return cart.length === 0;
+}
+
+function showEmptyMessage() {
+  document.getElementById("basket").innerHTML =
+    '<p class="empty_cart_text">Dein Warenkorb ist leer!</p>';
+}
+
+function showThankYou() {
+  document.getElementById("body_overlay").classList.remove("d_none");
+}
+
+function clearCartAfterDelay() {
+  setTimeout(function () {
+    clearBasketDisplay();
+    cart = [];
+    updateBasketCount();
+    document.getElementById("body_overlay").classList.add("d_none");
   }, 3000);
+}
+
+function clearBasketDisplay() {
+  document.getElementById("basket").innerHTML = "";
+  document.getElementById("sub_dishes").innerHTML = "";
+  document.getElementById("sub_total").innerHTML = "";
+  document.getElementById("quantity_basket").innerHTML = "";
 }

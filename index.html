@@ -54,39 +54,41 @@
             <section class="dish_container" id="dish_container"></section>
             <section class="basket_wrapper d_none " id="basket_wrapper">
                 <div class="basket_sticky_container">
+                    <button class="close_basket_btn" onclick="toggleBasket()">✖</button>
                     <div class="basket_title">
                         <h2>Warenkorb</h2>
 
                     </div>
 
                     <div class="basket" id="basket"></div>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Zwischensumme:</td>
+                                    <td id="sub_dishes"></td>
+                                </tr>
+                                <tr>
+                                    <td>Lieferkosten:</td>
+                                    <td>5,00 €</td>
+                                </tr>
 
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Zwischensumme:</td>
-                                <td id="sub_dishes"></td>
-                            </tr>
-                            <tr>
-                                <td>Lieferkosten:</td>
-                                <td>5,00 €</td>
-                            </tr>
+                                <tr>
+                                    <td>Gesamt:</td>
+                                    <td id="sub_total"></td>
+                                </tr>
 
-                            <tr>
-                                <td>Gesamt:</td>
-                                <td id="sub_total"></td>
-                            </tr>
+                            </tbody>
+                        </table>
 
-                        </tbody>
-                    </table>
-
-                    <button onclick="orderBtn()" class="order_btn">Bestellen</button>
-
+                        <button onclick="orderBtn()" class="order_btn">Bestellen</button>
+                    </div>
                 </div>
 
             </section>
 
         </div>
+
     </main>
     <footer>
         <img class="footer_logo" src="./Logo/Logo.png">

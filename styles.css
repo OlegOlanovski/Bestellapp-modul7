@@ -2,10 +2,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 30;
   height: 100px;
   width: 100%;
   background-color: #ff7f01;
-  max-width: 1440px;
   margin: 0 auto;
 }
 footer {
@@ -15,7 +16,6 @@ footer {
   height: 100px;
   width: 100%;
   background-color: #4b352e;
-  max-width: 1440px;
   margin: 0 auto;
 }
 .footer_logo {
@@ -68,7 +68,6 @@ footer {
   justify-content: center;
   justify-items: center;
   gap: 20px;
-  padding-top: 90px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -114,18 +113,26 @@ h2 {
   cursor: pointer;
   margin-right: 20px;
 }
+
 .basket_wrapper {
   width: 300px;
-  flex-grow: 1;
   background-color: #ff7f01;
-  position: relative;
+  position: sticky;
+  top: 105px;
+  align-self: flex-start;
+  height: auto;
+  border-radius: 10px;
 }
+
 .content_wrapper {
   display: flex;
+  justify-content: center;
   flex-direction: row;
-  flex-grow: 1;
   padding: 2px;
-  gap: 2px;
+  gap: 23px;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .basket {
   display: flex;
@@ -136,6 +143,9 @@ h2 {
   position: sticky;
   height: fit-content;
   z-index: 10;
+  padding-bottom: 16px;
+  border-bottom: solid;
+  border-bottom-color: white;
 }
 .basket_item {
   display: flex;
@@ -174,10 +184,7 @@ h2 {
 .basket_sticky_container {
   width: 300px;
   position: sticky;
-  top: 10px;
-  padding-bottom: 16px;
-  border-bottom: solid;
-  border-bottom-color: white;
+  top: 105px;
 }
 .basket_title {
   width: 100%;
@@ -294,7 +301,6 @@ img {
 }
 main {
   padding-bottom: 100px;
-  max-width: 1440px;
   margin: 0 auto;
 }
 .country_filter {
@@ -320,4 +326,14 @@ main {
 .country_filter button:hover {
   background-color: #faa959;
   transform: scale(1.05);
+}
+.close_basket_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
 }
