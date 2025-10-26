@@ -13,15 +13,17 @@
   }
 
   .basket_wrapper {
-    margin-top: 20px;
-    border-radius: 12px;
-    top: 10px;
-    bottom: 10px;
-    align-self: center;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    bottom: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 18;
+    background-color: #ff7f01;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 30;
+    transition: bottom 0.4s ease;
+    overflow-y: auto;
   }
 
   .dish_container {
@@ -55,17 +57,21 @@
     height: 100px;
     width: 100px;
   }
+
   .dish_img img {
     width: 80px;
     height: 80px;
   }
+
   .order_btn {
     width: 75%;
   }
+
   .rating_container {
     display: none;
   }
 }
+
 @media (max-width: 560px) {
   header,
   footer {
@@ -95,7 +101,6 @@
     align-items: center;
     gap: 16px;
     padding-top: 60px;
-    grid-template-columns: 1fr;
   }
 
   .dish_box {
@@ -128,12 +133,11 @@
   .content_wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 0;
     gap: 10px;
   }
 
   .basket_wrapper {
-    width: 95%;
+    width: 100%;
     margin-top: 20px;
     top: 10px;
     bottom: 10px;

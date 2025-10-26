@@ -26,69 +26,67 @@
 
     </header>
     <main>
+        <div class="page_wrapper">
+            <div class="main_container">
+                <img class="background_img" src="./img/hintergrund.jpg">
+            </div>
 
-        <div class="main_container">
-            <img class="background_img" src="./img/hintergrund.jpg">
+            <div class="cover_logocontainer">
+                <img class="cover_logo" src="./Logo/restaurant_logo.png">
+            </div>
 
-        </div>
-        <div class="cover_logocontainer">
-            <img class="cover_logo" src="./Logo/restaurant_logo.png">
+            <div class="rating_container">
+                <h2>Restaurant Poseidon</h2>
+                <span class="rating">Bewertung (4,2 von 5 Sternen)</span>
+            </div>
 
-        </div>
-        <div class="rating_container">
-            <h2>Restaurant Poseidon</h2>
-            <span class="rating">Bewertung (4,2 von 5 Sternen) </span>
+            <hr>
 
-        </div>
-        <hr>
-        <div class="country_filter">
-            <button onclick="filterDishes('all')">🍽️ Alle</button>
-            <button onclick="filterDishes('italian')">&#127470;&#127481; Italienisch</button>
-            <button onclick="filterDishes('japanese')">&#127471;&#127477; Japanisch</button>
-            <button onclick="filterDishes('mexican')">&#127474;&#127485; Mexikanisch</button>
-            <button onclick="filterDishes('american')">&#127482;&#127480; Amerikanisch</button>
-            <button onclick="filterDishes('turkish')">&#127481;&#127479; Türkisch</button>
-        </div>
+            <div class="country_filter">
+                <button onclick="filterDishes('all')">🍽️ Alle</button>
+                <button onclick="filterDishes('italian')">&#127470;&#127481; Italienisch</button>
+                <button onclick="filterDishes('japanese')">&#127471;&#127477; Japanisch</button>
+                <button onclick="filterDishes('mexican')">&#127474;&#127485; Mexikanisch</button>
+                <button onclick="filterDishes('american')">&#127482;&#127480; Amerikanisch</button>
+                <button onclick="filterDishes('turkish')">&#127481;&#127479; Türkisch</button>
+            </div>
 
-        <div class="content_wrapper">
-            <section class="dish_container" id="dish_container"></section>
-            <section class="basket_wrapper d_none " id="basket_wrapper">
-                <div class="basket_sticky_container">
-                    <button class="close_basket_btn" onclick="toggleBasket()">✖</button>
-                    <div class="basket_title">
-                        <h2>Warenkorb</h2>
+            <div class="content_wrapper">
+                <section class="dish_container" id="dish_container"></section>
 
+                <aside class="basket_wrapper d_none" id="basket_wrapper">
+                    <div class="basket_sticky_container">
+                        <button class="close_basket_btn" onclick="toggleBasket()">✖</button>
+                        <div class="basket_title">
+                            <h2>Warenkorb</h2>
+                        </div>
+
+                        <div class="basket" id="basket"></div>
+
+                        <div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Zwischensumme:</td>
+                                        <td id="sub_dishes"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lieferkosten:</td>
+                                        <td>5,00 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gesamt:</td>
+                                        <td id="sub_total"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button onclick="orderBtn()" class="order_btn">Bestellen</button>
+                        </div>
                     </div>
-
-                    <div class="basket" id="basket"></div>
-                    <div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Zwischensumme:</td>
-                                    <td id="sub_dishes"></td>
-                                </tr>
-                                <tr>
-                                    <td>Lieferkosten:</td>
-                                    <td>5,00 €</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Gesamt:</td>
-                                    <td id="sub_total"></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
-                        <button onclick="orderBtn()" class="order_btn">Bestellen</button>
-                    </div>
-                </div>
-
-            </section>
-
+                </aside>
+            </div>
         </div>
-
     </main>
     <footer>
         <img class="footer_logo" src="./Logo/Logo.png">

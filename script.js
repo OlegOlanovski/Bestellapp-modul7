@@ -126,6 +126,8 @@ function orderBtn() {
   if (cartEmpty()) return showEmptyMessage();
   showThankYou();
   clearCartAfterDelay();
+  deleteBasket();
+  renderDishes();
 }
 
 function cartEmpty() {
@@ -143,11 +145,11 @@ function showThankYou() {
 
 function clearCartAfterDelay() {
   setTimeout(function () {
-    clearBasketDisplay();
     cart = [];
     updateBasketCount();
+    clearBasketDisplay();
     document.getElementById("body_overlay").classList.add("d_none");
-  }, 3000);
+  }, 2000);
 }
 
 function clearBasketDisplay() {
@@ -155,4 +157,8 @@ function clearBasketDisplay() {
   document.getElementById("sub_dishes").innerHTML = "";
   document.getElementById("sub_total").innerHTML = "";
   document.getElementById("quantity_basket").innerHTML = "";
+}
+function deleteBasket() {
+  let cartWrapper = document.getElementById("basket_wrapper");
+  cartWrapper.classList.add("d_none");
 }
